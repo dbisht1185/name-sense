@@ -38,7 +38,7 @@ export default function HeroSection() {
                 <h1 className="font-bold text-xl mb-2">Enter Name</h1>
                 <input className="w-[280px] h-[40px] border rounded-lg p-2 mt-4" type="text" placeholder="e.g. Rohan, Rahul"
                     onChange={(e) => setName(e.target.value)} />
-                <button onClick={apiCall} className="w-[280px] h-[40px] rounded-lg p-2 mt-4 bg-purple-500 text-white hover:bg-purple-600 transition-colors cursor-pointer">Predict Gender</button>
+                <button onClick={apiCall} className="w-[280px] h-[40px] rounded-lg p-2 mt-4 bg-purple-500 text-white hover:bg-purple-600 transition-colors cursor-pointer">Predict probabitlity</button>
 
                 <div className="w-full h-full rounded-lg p-8">
                     <p className="text-sm">Powered by global naming databases. Predictions are statistical probabilities.
