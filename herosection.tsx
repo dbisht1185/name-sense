@@ -1,11 +1,18 @@
 "use client"
 import { useState } from "react"
 
+interface GenderResult {
+    name: string
+    gender: string
+    probability: number
+    count: number
+}
+
 export default function HeroSection() {
 
     const [name, setName] = useState("")
     console.log(name, "name")
-    const [result, setResult] = useState(null)
+    const [result, setResult] = useState<GenderResult | null>(null)
     const [loading, setLoading] = useState(false)
 
     const apiCall = async () => {
@@ -16,7 +23,7 @@ export default function HeroSection() {
         setLoading(false)
 
     }
-    const ProbabilityPercentage = (prob) => {
+    const ProbabilityPercentage = (prob: number) => {
         const finalData = prob * 100;
         return finalData;
     }

@@ -1,11 +1,21 @@
 "use client"
 import { useState } from "react"
 
+interface NationalityResult {
+    name: string
+    country: Array<{
+        country_id: string
+        probability: number
+        count: number
+    }>
+    count: number
+}
+
 export default function HeroSection() {
 
     const [name, setName] = useState("")
     console.log(name, "name")
-    const [result, setResult] = useState(null)
+    const [result, setResult] = useState<NationalityResult | null>(null)
     const [loading, setLoading] = useState(false)
 
     const apiCall = async () => {
@@ -17,7 +27,7 @@ export default function HeroSection() {
         setLoading(false)
 
     }
-    const ProbabilityPercentage = (prob) => {
+    const ProbabilityPercentage = (prob: number) => {
         const finalData = Math.round(prob * 100);
 
         return finalData;
