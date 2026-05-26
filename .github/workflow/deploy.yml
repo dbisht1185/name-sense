@@ -23,5 +23,3 @@ jobs:
             npm install
             npm run build
             pm2 restart name-sense
-
-            README.md me ek line add kar do
