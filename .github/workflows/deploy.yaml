@@ -1,26 +1,10 @@
-name: Deploy Name Sense
+name: Test Workflow
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.PORT }}
-          script: |
-            cd /home/ubuntu/name-sense
-            git pull origin main
-            npm install
-            npm run build
-            pm2 restart name-sense
+      - run: echo "Hello World"
